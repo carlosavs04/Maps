@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_72" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Maps" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CIUDADES CAPITALES" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="opM-gH-uEt">
+                                <rect key="frame" x="104.00000000000001" y="69" width="222.33333333333337" height="25.333333333333329"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25.329999999999998" id="JoA-pb-Lt8"/>
+                                    <constraint firstAttribute="width" constant="222.33000000000001" id="eAL-9V-x1s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bb6-WU-oYL">
+                                <rect key="frame" x="0.0" y="102" width="430" height="796"/>
+                                <subviews>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S7a-sS-mUc">
+                                        <rect key="frame" x="54.666666666666657" y="10" width="321" height="167"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="167" id="mRR-Oj-n7D"/>
+                                            <constraint firstAttribute="width" constant="321" id="wPg-og-frE"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="4F6-MQ-1b4"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="Rn9-nC-H0b"/>
+                                        </connections>
+                                    </pickerView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="País: Alemania" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWS-yL-fKi">
+                                        <rect key="frame" x="96.666666666666686" y="197" width="237" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="237" id="fmf-UQ-TI8"/>
+                                            <constraint firstAttribute="height" constant="26" id="hrd-gS-lPG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Ciudad Berlin.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1Ef-TN-fHM">
+                                        <rect key="frame" x="21" y="253" width="388" height="243.66666666666663"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="1Ef-TN-fHM" secondAttribute="height" multiplier="285:179" id="TA8-re-RK4"/>
+                                        </constraints>
+                                    </imageView>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0uV-K2-Rof">
+                                        <rect key="frame" x="21" y="536.66666666666663" width="388" height="388"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="0uV-K2-Rof" secondAttribute="height" multiplier="1:1" id="5Jj-Nh-LJT"/>
+                                        </constraints>
+                                        <standardMapConfiguration key="preferredConfiguration"/>
+                                    </mapView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="S7a-sS-mUc" firstAttribute="centerX" secondItem="bb6-WU-oYL" secondAttribute="centerX" id="1BK-oa-XFq"/>
+                                    <constraint firstItem="S7a-sS-mUc" firstAttribute="top" secondItem="bb6-WU-oYL" secondAttribute="top" constant="10" id="2Yv-n0-hjf"/>
+                                    <constraint firstItem="1Ef-TN-fHM" firstAttribute="centerX" secondItem="bb6-WU-oYL" secondAttribute="centerX" id="9VB-CX-BdI"/>
+                                    <constraint firstItem="0uV-K2-Rof" firstAttribute="centerX" secondItem="bb6-WU-oYL" secondAttribute="centerX" id="EMB-XC-MKb"/>
+                                    <constraint firstItem="0uV-K2-Rof" firstAttribute="top" secondItem="1Ef-TN-fHM" secondAttribute="bottom" constant="40" id="F1l-Yg-II1"/>
+                                    <constraint firstItem="NWS-yL-fKi" firstAttribute="centerX" secondItem="bb6-WU-oYL" secondAttribute="centerX" id="Gc0-tf-Jdm"/>
+                                    <constraint firstItem="1Ef-TN-fHM" firstAttribute="width" secondItem="bb6-WU-oYL" secondAttribute="width" multiplier="0.9" constant="1" id="SCU-hR-EJN"/>
+                                    <constraint firstItem="NWS-yL-fKi" firstAttribute="top" secondItem="S7a-sS-mUc" secondAttribute="bottom" constant="20" id="SWx-DP-Juv"/>
+                                    <constraint firstItem="1Ef-TN-fHM" firstAttribute="top" secondItem="NWS-yL-fKi" secondAttribute="bottom" constant="30" id="ddZ-eL-5yR"/>
+                                    <constraint firstItem="0uV-K2-Rof" firstAttribute="width" secondItem="1Ef-TN-fHM" secondAttribute="width" id="yif-9g-HRZ"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.36872269044289396" green="0.86078917980194092" blue="0.67987599953977185" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="opM-gH-uEt" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="E8S-vL-IFc"/>
+                            <constraint firstItem="bb6-WU-oYL" firstAttribute="top" secondItem="opM-gH-uEt" secondAttribute="bottom" constant="7.6699999999999999" id="OCC-jd-q14"/>
+                            <constraint firstItem="bb6-WU-oYL" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="fUz-WF-WdQ"/>
+                            <constraint firstItem="opM-gH-uEt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="jlO-Nf-pPm"/>
+                            <constraint firstItem="bb6-WU-oYL" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="sOO-LU-6KY"/>
+                            <constraint firstItem="bb6-WU-oYL" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="uDu-Cg-lWN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imvCiudad" destination="1Ef-TN-fHM" id="DSG-ME-t1j"/>
+                        <outlet property="lblPais" destination="NWS-yL-fKi" id="liL-nW-zCx"/>
+                        <outlet property="mapCiudad" destination="0uV-K2-Rof" id="AtV-H0-A5G"/>
+                        <outlet property="scrCiudades" destination="bb6-WU-oYL" id="Hto-CU-7YB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.74418604651163" y="3.8626609442060089"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Ciudad Berlin.jpg" width="1600" height="1066"/>
+    </resources>
+</document>
